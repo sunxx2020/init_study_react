@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hello React</title>
+</head>
+<body>
+  <div id="test"></div>
+  <!-- 1. 引入React核心库(核心库必须最先引入) -->
+  <script src="../js/react.development.js"></script>
+  <!-- 2.引入React-DOM, 用于支持react操作DOM 提供一个ReactDom -->
+  <script src="../js/react-dom.development.js"></script>
+
+
+  <script type="text/javascript"> //此处不需声明转化,原生js创建虚拟dom
+    // 1.原生js创建虚拟DOM  React.creatElement('标签','标签属性','标签内容')
+    const VDOM = React.createElement('h1',{id:'title'},React.createElement('span',{},'Hello, React')) //此处不能写html字符串, 因为不是字符串
+    // 2.渲染虚拟dom到视图
+    ReactDOM.render(VDOM,document.getElementById('test'))
+
+    // 注:   其实jsx创建虚拟DOM的方式是原生js创建虚拟dom的语法糖形式
+    //    jsx语法经过babel转化后的形式其实就是js创建虚拟dom的形式
+  </script>
+</body>
+</html>
